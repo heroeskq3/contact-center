@@ -257,15 +257,16 @@ function initObservabilidadOperativa() {
     updateCuellosBotellaTable();
     initObservabilidadOperativaCharts();
     
-    // Actualizar cada 10 segundos para tiempo real
+    // Actualizar cada 3 segundos para tiempo real
     if (obsOperativaInterval) clearInterval(obsOperativaInterval);
     obsOperativaInterval = setInterval(() => {
-        if (currentDashboard === 'observabilidad-operativa') {
+        if (window.currentDashboard === 'observabilidad-operativa') {
             updateObservabilidadOperativa();
             updateAlertasOperativas();
             updateCuellosBotellaTable();
+            updateObservabilidadOperativaCharts();
         }
-    }, 10000);
+    }, 3000);
 }
 
 let obsOperativaInterval = null;
@@ -528,5 +529,69 @@ function initObservabilidadOperativaCharts() {
                 plugins: { legend: { position: 'bottom' } }
             }
         });
+    }
+}
+
+// Función para actualizar gráficos en tiempo real
+function updateObservabilidadOperativaCharts() {
+    // Actualizar gráfico de volumen (agregar nuevo punto y remover el más antiguo)
+    if (obsOperativaCharts.volumen) {
+        const chart = obsOperativaCharts.volumen;
+        const currentData = chart.data.datasets[0].data;
+        const currentLabels = chart.data.labels;
+        
+        // Agregar nuevo punto al final
+        const newValue = Math.random() * 20 + 100;
+        const now = new Date();
+        const newLabel = now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+        
+        // Mantener solo los últimos 12 puntos (cada 10 minutos)
+        if (currentData.length >= 12) {
+            currentData.shift();
+            currentLabels.shift();
+        }
+        currentData.push(newValue);
+        currentLabels.push(newLabel);
+        
+        chart.update('none');
+    }
+    
+    // Actualizar gráfico de anomalías
+    if (obsOperativaCharts.anomalias) {
+        const newAnomalias = obsOperativaCharts.anomalias.data.datasets[0].data.map(val => {
+            const change = Math.floor((Math.random() - 0.5) * 2);
+            return Math.max(0, val + change);
+        });
+        const newCuellos = obsOperativaCharts.anomalias.data.datasets[1].data.map(val => {
+            const change = Math.floor((Math.random() - 0.5) * 2);
+            return Math.max(0, val + change);
+        });
+        obsOperativaCharts.anomalias.data.datasets[0].data = newAnomalias;
+        obsOperativaCharts.anomalias.data.datasets[1].data = newCuellos;
+        obsOperativaCharts.anomalias.update('none');
+    }
+    
+    // Actualizar gráfico de tiempo muerto
+    if (obsOperativaCharts.tiempoMuerto) {
+        const newData = obsOperativaCharts.tiempoMuerto.data.datasets[0].data.map(val => {
+            const change = (Math.random() - 0.5) * 5;
+            return Math.max(0, val + change);
+        });
+        obsOperativaCharts.tiempoMuerto.data.datasets[0].data = newData;
+        obsOperativaCharts.tiempoMuerto.update('none');
+    }
+    
+    // Actualizar gráfico de scripts (rotar porcentajes)
+    if (obsOperativaCharts.scripts) {
+        const currentData = obsOperativaCharts.scripts.data.datasets[0].data;
+        const newData = [
+            Math.max(80, Math.min(95, currentData[0] + (Math.random() - 0.5) * 2)),
+            Math.max(5, Math.min(15, currentData[1] + (Math.random() - 0.5) * 1)),
+            Math.max(0, Math.min(5, currentData[2] + (Math.random() - 0.5) * 1))
+        ];
+        // Normalizar para que sume 100
+        const sum = newData.reduce((a, b) => a + b, 0);
+        obsOperativaCharts.scripts.data.datasets[0].data = newData.map(v => Math.round((v / sum) * 100));
+        obsOperativaCharts.scripts.update('none');
     }
 }

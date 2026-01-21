@@ -267,22 +267,112 @@ function initDashboardPrincipal() {
 function updatePrincipalMetrics() {
     const data = generatePrincipalData();
     
-    // Actualizar valores
-    document.getElementById('slaValue').textContent = data.sla.toFixed(1) + '%';
-    document.getElementById('ahtValue').textContent = data.aht.toFixed(1) + ' min';
-    document.getElementById('fcrValue').textContent = data.fcr.toFixed(1) + '%';
-    document.getElementById('npsValue').textContent = data.nps;
-    document.getElementById('abandonValue').textContent = data.abandonRate.toFixed(1) + '%';
-    document.getElementById('waitValue').textContent = data.waitTime + ' seg';
-    document.getElementById('agentsValue').textContent = data.activeAgents;
-    document.getElementById('agentsTotal').textContent = data.totalAgents;
-    document.getElementById('callsValue').textContent = data.callsPerHour;
-    document.getElementById('callsToday').textContent = data.callsToday.toLocaleString();
+    // Actualizar valores con animación suave
+    animateMetricValue('slaValue', data.sla, (val) => val.toFixed(1) + '%');
+    animateMetricValue('ahtValue', data.aht, (val) => val.toFixed(1) + ' min');
+    animateMetricValue('fcrValue', data.fcr, (val) => val.toFixed(1) + '%');
+    animateMetricValue('npsValue', data.nps, (val) => Math.round(val).toString());
+    animateMetricValue('abandonValue', data.abandonRate, (val) => val.toFixed(1) + '%');
+    animateMetricValue('waitValue', data.waitTime, (val) => Math.round(val) + ' seg');
+    animateMetricValue('agentsValue', data.activeAgents, (val) => Math.round(val).toString());
+    animateMetricValue('callsValue', data.callsPerHour, (val) => Math.round(val).toString());
     
-    // Actualizar barras
-    document.getElementById('slaBar').style.width = data.sla + '%';
-    document.getElementById('fcrBar').style.width = data.fcr + '%';
+    // Actualizar valores sin animación para algunos
+    const agentsTotalEl = document.getElementById('agentsTotal');
+    if (agentsTotalEl) agentsTotalEl.textContent = data.totalAgents;
+    
+    const callsTodayEl = document.getElementById('callsToday');
+    if (callsTodayEl) {
+        const current = parseInt(callsTodayEl.textContent.replace(/,/g, '')) || 0;
+        window.animateValue(callsTodayEl, current, data.callsToday, 500, (val) => Math.round(val).toLocaleString());
+    }
+    
+    // Actualizar barras con animación
+    animateBarWidth('slaBar', data.sla);
+    animateBarWidth('fcrBar', data.fcr);
 }
+
+// Función auxiliar para animar valores de métricas
+function animateMetricValue(elementId, targetValue, formatter) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    const currentText = element.textContent;
+    let currentValue = 0;
+    
+    // Extraer número del texto actual
+    const match = currentText.match(/[\d.]+/);
+    if (match) {
+        currentValue = parseFloat(match[0]);
+    }
+    
+    if (window.animateValue) {
+        window.animateValue(element, currentValue, targetValue, 500, formatter);
+    } else {
+        element.textContent = formatter(targetValue);
+    }
+}
+
+// Función auxiliar para animar ancho de barras
+function animateBarWidth(elementId, targetWidth) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    const currentWidth = parseFloat(element.style.width) || 0;
+    const startTime = performance.now();
+    const duration = 500;
+    const difference = targetWidth - currentWidth;
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOutQuad = progress * (2 - progress);
+        const current = currentWidth + (difference * easeOutQuad);
+        
+        if (element) {
+            element.style.width = current + '%';
+        }
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            if (element) {
+                element.style.width = targetWidth + '%';
+            }
+        }
+    }
+    
+    requestAnimationFrame(update);
+}
+
+// Función auxiliar para animar valores numéricos (reutilizable) - Global
+window.animateValue = function(element, start, end, duration, formatter) {
+    if (!element) return;
+    
+    const startTime = performance.now();
+    const difference = end - start;
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOutQuad = progress * (2 - progress);
+        const current = start + (difference * easeOutQuad);
+        
+        if (element && element.textContent !== undefined) {
+            element.textContent = formatter(current);
+        }
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            if (element && element.textContent !== undefined) {
+                element.textContent = formatter(end);
+            }
+        }
+    }
+    
+    requestAnimationFrame(update);
+};
 
 function generatePrincipalData() {
     return {
@@ -429,9 +519,51 @@ function initPrincipalCharts() {
     }
 }
 
-// Auto-actualizar cada 30 segundos
-setInterval(() => {
-    if (currentDashboard === 'principal') {
-        updatePrincipalMetrics();
+// Función para actualizar gráficos en tiempo real
+function updatePrincipalChartsRealTime() {
+    if (!principalCharts.calls || !principalCharts.sla) return;
+    
+    // Actualizar gráfico de llamadas
+    if (principalCharts.calls) {
+        const newData = Array(12).fill(0).map(() => Math.floor(Math.random() * 150) + 80);
+        principalCharts.calls.data.datasets[0].data = newData;
+        principalCharts.calls.update('none'); // 'none' para animación suave
     }
-}, 30000);
+    
+    // Actualizar gráfico de SLA
+    if (principalCharts.sla) {
+        const newSLA = Array(12).fill(0).map(() => Math.random() * 15 + 80);
+        principalCharts.sla.data.datasets[0].data = newSLA;
+        principalCharts.sla.update('none');
+    }
+    
+    // Actualizar gráfico de canales (rotar datos)
+    if (principalCharts.channel) {
+        const currentData = principalCharts.channel.data.datasets[0].data;
+        const newChannelData = currentData.map(val => {
+            const change = (Math.random() - 0.5) * 5;
+            return Math.max(1, Math.min(99, val + change));
+        });
+        // Normalizar para que sume 100
+        const sum = newChannelData.reduce((a, b) => a + b, 0);
+        principalCharts.channel.data.datasets[0].data = newChannelData.map(v => Math.round((v / sum) * 100));
+        principalCharts.channel.update('none');
+    }
+    
+    // Actualizar gráfico de agentes
+    if (principalCharts.agents) {
+        const newAgentsData = [145, 138, 132, 128, 125].map(val => {
+            return val + Math.floor((Math.random() - 0.5) * 10);
+        });
+        principalCharts.agents.data.datasets[0].data = newAgentsData;
+        principalCharts.agents.update('none');
+    }
+}
+
+// Auto-actualizar métricas cada 3 segundos
+setInterval(() => {
+    if (window.currentDashboard === 'principal') {
+        updatePrincipalMetrics();
+        updatePrincipalChartsRealTime();
+    }
+}, 3000);
