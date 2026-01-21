@@ -117,17 +117,17 @@ function generateSLAAnalysis() {
                     <strong>Situación:</strong> Los agentes María González, Carlos Ramírez y Ana Martínez tienen tasa de recuperación del 34%, 
                     28% y 31% respectivamente, pero están en turno matutino donde el volumen es bajo. 
                     <strong>Acción:</strong> Moverlos al turno 14:00-20:00 donde hay mayor concentración de deudores activos. 
-                    <strong>Impacto esperado:</strong> Aumentar SLA del 76% al 84% en horario pico y recuperar $45,000 adicionales semanales.
+                    <strong>Impacto esperado:</strong> Aumentar SLA del 76% al 84% en horario pico y recuperar ₡45,000 adicionales semanales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
                 <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #92400e;">2. Implementar Priorización por Monto de Deuda en Cola</p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> Actualmente las llamadas se distribuyen por orden de llegada. 
-                    Análisis muestra que el 42% de las llamadas abandonadas tienen deuda > $5,000. 
-                    <strong>Acción:</strong> Configurar ACD para que priorice automáticamente llamadas con deuda > $3,000. 
+                    Análisis muestra que el 42% de las llamadas abandonadas tienen deuda > ₡5,000. 
+                    <strong>Acción:</strong> Configurar ACD para que priorice automáticamente llamadas con deuda > ₡3,000. 
                     <strong>Impacto esperado:</strong> Reducir abandono de cuentas grandes del 42% al 18%, 
-                    recuperando $120,000 mensuales que actualmente se pierden por abandono.
+                    recuperando ₡120,000 mensuales que actualmente se pierden por abandono.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -136,7 +136,7 @@ function generateSLAAnalysis() {
                     <strong>Situación:</strong> 156 clientes que abandonaron llamada en últimos 30 días tienen historial de pago del 78% 
                     cuando se contactan. Estos clientes esperan en promedio 8 minutos antes de abandonar. 
                     <strong>Acción:</strong> Ofrecer callback automático a clientes con score de pago > 70% que esperan > 5 minutos. 
-                    <strong>Impacto esperado:</strong> Recuperar 78 de esos 156 clientes (50%), generando $89,000 adicionales mensuales.
+                    <strong>Impacto esperado:</strong> Recuperar 78 de esos 156 clientes (50%), generando ₡89,000 adicionales mensuales.
                 </p>
             </div>
         </div>
@@ -154,7 +154,7 @@ function generateSLAAnalysis() {
                     <strong>Quién:</strong> María González (ID: 1247), Carlos Ramírez (ID: 1189), Ana Martínez (ID: 1321). 
                     <strong>Cuándo:</strong> A partir de mañana, cambiar horario de 8:00-14:00 a 14:00-20:00. 
                     <strong>Por qué:</strong> Tienen tasa de recuperación 2.3x superior al promedio y el pico vespertino tiene 
-                    mayor concentración de deudores con capacidad de pago. <strong>ROI esperado:</strong> $12,500 semanales adicionales.
+                    mayor concentración de deudores con capacidad de pago. <strong>ROI esperado:</strong> ₡12,500 semanales adicionales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar hoy</span>
             </div>
@@ -163,9 +163,9 @@ function generateSLAAnalysis() {
                     ESTA SEMANA - Configurar Priorización por Monto en ACD
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
-                    <strong>Qué:</strong> Modificar reglas de routing en sistema ACD para que llamadas con deuda > $3,000 
+                    <strong>Qué:</strong> Modificar reglas de routing en sistema ACD para que llamadas con deuda > ₡3,000 
                     salten al frente de la cola. <strong>Configuración:</strong> Contactar a IT para ajustar parámetros de priorización. 
-                    <strong>Impacto:</strong> Reducir abandono de cuentas grandes y aumentar recuperación en $30,000 mensuales.
+                    <strong>Impacto:</strong> Reducir abandono de cuentas grandes y aumentar recuperación en ₡30,000 mensuales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -176,7 +176,7 @@ function generateSLAAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Integrar sistema de callback que analice historial de pago del cliente y ofrezca 
                     callback automático si score > 70% y tiempo de espera > 5 min. <strong>Requisito:</strong> Coordinar con 
-                    proveedor de telefonía y CRM. <strong>ROI:</strong> $89,000 mensuales adicionales en recuperación.
+                    proveedor de telefonía y CRM. <strong>ROI:</strong> ₡89,000 mensuales adicionales en recuperación.
                 </p>
                 <span class="action-priority priority-medium">Media Prioridad - Próximos 15 días</span>
             </div>
@@ -238,7 +238,7 @@ function generateAHTAnalysis() {
                     único que muestre: monto adeudado, últimos 3 pagos, capacidad de pago estimada (según IA), y opciones de 
                     planes de pago pre-calculados. <strong>Impacto:</strong> Reducir tiempo de consulta de 1.8 min a 0.3 min, 
                     bajando AHT de ${currentAHT.toFixed(1)} min a ${(currentAHT - 1.5).toFixed(1)} min. 
-                    Esto permite atender <strong>18% más llamadas diarias</strong>, aumentando recuperación en $67,000 mensuales.
+                    Esto permite atender <strong>18% más llamadas diarias</strong>, aumentando recuperación en ₡67,000 mensuales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -249,7 +249,7 @@ function generateAHTAnalysis() {
                     <strong>Acción:</strong> Sistema IA que detecta perfil del cliente (buen pagador, negociador, evasivo) y 
                     muestra script personalizado. Para buen pagador: ir directo a negociación. Para evasivo: validar identidad 
                     y aplicar presión controlada. <strong>Impacto:</strong> Reducir tiempo de habla de ${(currentAHT * 0.75).toFixed(1)} min 
-                    a ${(currentAHT * 0.75 * 0.85).toFixed(1)} min, aumentando productividad del 15% y recuperación en $45,000 mensuales.
+                    a ${(currentAHT * 0.75 * 0.85).toFixed(1)} min, aumentando productividad del 15% y recuperación en ₡45,000 mensuales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -259,7 +259,7 @@ function generateAHTAnalysis() {
                     manualmente después de cada contacto. <strong>Acción:</strong> Sistema de transcripción automática que genera 
                     resumen de la llamada, compromisos de pago, y actualiza CRM automáticamente. Agente solo valida y confirma. 
                     <strong>Impacto:</strong> Reducir post-call de ${(currentAHT * 0.10).toFixed(1)} min a ${(currentAHT * 0.10 * 0.3).toFixed(1)} min, 
-                    liberando <strong>12 minutos por hora</strong> por agente para más llamadas. Esto representa $38,000 mensuales 
+                    liberando <strong>12 minutos por hora</strong> por agente para más llamadas. Esto representa ₡38,000 mensuales 
                     adicionales en recuperación.
                 </p>
             </div>
@@ -278,7 +278,7 @@ function generateAHTAnalysis() {
                     <strong>Quiénes:</strong> Agentes identificados: Luis Pérez (AHT: 7.2 min), Carmen Díaz (AHT: 6.8 min), 
                     Roberto Silva (AHT: 7.5 min), y 5 más. <strong>Qué:</strong> Sesión de 2 horas mostrando cómo usar el 
                     dashboard unificado para reducir consultas. <strong>Meta:</strong> Bajar AHT de estos 8 agentes a < 5.5 min 
-                    en 7 días. <strong>ROI:</strong> $15,000 mensuales adicionales en recuperación.
+                    en 7 días. <strong>ROI:</strong> ₡15,000 mensuales adicionales en recuperación.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -290,7 +290,7 @@ function generateAHTAnalysis() {
                     <strong>Qué:</strong> Coordinar con IT para integrar sistemas y crear vista única del cliente. 
                     <strong>Requisitos:</strong> Mostrar deuda actual, últimos pagos, score de pago IA, y planes sugeridos. 
                     <strong>Impacto:</strong> Reducir AHT general en 1.5 min, aumentando capacidad de atención en 18% 
-                    y recuperación en $67,000 mensuales.
+                    y recuperación en ₡67,000 mensuales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Próximos 10 días</span>
             </div>
@@ -350,11 +350,11 @@ function generateFCRAnalysis() {
                 <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #92400e;">1. Ampliar Autorización de Agentes para Cerrar en Primera Llamada</p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> El 34% de las llamadas que no se resuelven es porque el agente no puede aprobar 
-                    planes > $2,000. <strong>Acción:</strong> Dar autorización a agentes con experiencia > 6 meses para aprobar 
-                    planes hasta $5,000 y descuentos hasta 15% sin consultar supervisor. Para agentes nuevos, mantener límite 
+                    planes > ₡2,000. <strong>Acción:</strong> Dar autorización a agentes con experiencia > 6 meses para aprobar 
+                    planes hasta ₡5,000 y descuentos hasta 15% sin consultar supervisor. Para agentes nuevos, mantener límite 
                     actual pero con proceso de escalamiento rápido (supervisor disponible en < 2 min). <strong>Impacto:</strong> 
-                    Aumentar FCR del ${fcr.toFixed(1)}% al ${(fcr + 12).toFixed(1)}%, reduciendo costos de seguimiento en $8,500 
-                    mensuales y aumentando recuperación en $67,000 mensuales (por cerrar más en primera llamada).
+                    Aumentar FCR del ${fcr.toFixed(1)}% al ${(fcr + 12).toFixed(1)}%, reduciendo costos de seguimiento en ₡8,500 
+                    mensuales y aumentando recuperación en ₡67,000 mensuales (por cerrar más en primera llamada).
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -362,9 +362,9 @@ function generateFCRAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> El 28% de clientes piden "pensarlo" y solo el 34% vuelve a pagar. 
                     <strong>Acción:</strong> Capacitar agentes en técnica: "Entiendo que quiere pensarlo. Sin embargo, este plan 
-                    de $500 x 4 meses solo está disponible hoy. Si llama mañana, el plan puede cambiar. ¿Prefiere asegurar este 
+                    de ₡500 x 4 meses solo está disponible hoy. Si llama mañana, el plan puede cambiar. ¿Prefiere asegurar este 
                     plan ahora o arriesgarse a que cambie?" <strong>Impacto:</strong> Reducir tasa de "pensarlo" del 28% al 12%, 
-                    aumentando cierres inmediatos y recuperación en $45,000 mensuales.
+                    aumentando cierres inmediatos y recuperación en ₡45,000 mensuales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -374,7 +374,7 @@ function generateFCRAnalysis() {
                     de pago, etc.) que no se solicitó inicialmente. <strong>Acción:</strong> Checklist obligatorio en pantalla del 
                     agente: antes de terminar llamada, verificar que tiene: monto adeudado confirmado, plan de pago acordado, 
                     método de pago, y documentación necesaria. <strong>Impacto:</strong> Reducir seguimientos por información faltante 
-                    del 23% al 8%, ahorrando $4,200 mensuales en tiempo de agente.
+                    del 23% al 8%, ahorrando ₡4,200 mensuales en tiempo de agente.
                 </p>
             </div>
         </div>
@@ -390,8 +390,8 @@ function generateFCRAnalysis() {
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Quiénes:</strong> Agentes con > 6 meses de experiencia y tasa de recuperación > 30%. 
-                    <strong>Qué:</strong> Autorizar aprobar planes hasta $5,000 y descuentos hasta 15%. 
-                    <strong>ROI:</strong> Aumentar FCR en 12% y recuperación en $67,000 mensuales.
+                    <strong>Qué:</strong> Autorizar aprobar planes hasta ₡5,000 y descuentos hasta 15%. 
+                    <strong>ROI:</strong> Aumentar FCR en 12% y recuperación en ₡67,000 mensuales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -402,7 +402,7 @@ function generateFCRAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Sesión de 2 horas para todos los agentes sobre cómo cerrar en primera llamada, 
                     incluyendo scripts para manejar objeciones de "pensarlo". <strong>Instructor:</strong> María González. 
-                    <strong>ROI:</strong> $45,000 mensuales adicionales.
+                    <strong>ROI:</strong> ₡45,000 mensuales adicionales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar hoy</span>
             </div>
@@ -458,16 +458,16 @@ function generateRecaudacionAnalysis() {
             </div>
             <div class="ai-analysis-card">
                 <p style="margin: 0; color: #475569; line-height: 1.6;">
-                    <strong>Escenario detectado:</strong> La recaudación de hoy es <strong style="color: #8b5cf6;">$${parseFloat(recaudacionHoy).toLocaleString('es-ES')}</strong>, 
-                    ${diferencia > 0 ? `$${Math.abs(diferencia).toLocaleString('es-ES')} por encima` : `$${Math.abs(diferencia).toLocaleString('es-ES')} por debajo`} 
-                    del promedio diario de $${recaudacionPromedio.toLocaleString('es-ES')}. 
+                    <strong>Escenario detectado:</strong> La recaudación de hoy es <strong style="color: #8b5cf6;">₡${parseFloat(recaudacionHoy).toLocaleString('es-ES')}</strong>, 
+                    ${diferencia > 0 ? `₡${Math.abs(diferencia).toLocaleString('es-ES')} por encima` : `₡${Math.abs(diferencia).toLocaleString('es-ES')} por debajo`} 
+                    del promedio diario de ₡${recaudacionPromedio.toLocaleString('es-ES')}. 
                     Análisis de las <strong>347 transacciones</strong> de hoy muestra que el <strong>top 5 agentes</strong> 
                     (María González, Carlos Ramírez, Ana Martínez, Luis Pérez, Carmen Díaz) concentran el <strong>42% de la recaudación</strong> 
                     pero solo representan el 21% del equipo.
                 </p>
                 <p style="margin: 0.75rem 0 0 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Root cause identificado:</strong> Los top performers tienen en común: 
-                    (1) Enfocan llamadas en clientes con deuda $3,000-$15,000 (zona de mayor probabilidad de pago), 
+                    (1) Enfocan llamadas en clientes con deuda ₡3,000-₡15,000 (zona de mayor probabilidad de pago), 
                     (2) Ofrecen planes de pago de 3-6 cuotas (no 1 pago único), 
                     (3) Llaman en horarios específicos según perfil del cliente (ej: ejecutivos entre 9-11am, 
                     empleados entre 6-8pm). Los agentes promedio no aplican estas estrategias.
@@ -483,12 +483,12 @@ function generateRecaudacionAnalysis() {
             <div class="ai-recommendation-card">
                 <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #92400e;">1. Replicar Estrategia de Segmentación por Monto de Deuda</p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
-                    <strong>Situación:</strong> Los top 5 agentes priorizan clientes con deuda $3,000-$15,000 porque tienen 
+                    <strong>Situación:</strong> Los top 5 agentes priorizan clientes con deuda ₡3,000-₡15,000 porque tienen 
                     tasa de recuperación del 67% vs 34% en otros rangos. Los demás agentes llaman sin priorización. 
-                    <strong>Acción:</strong> Configurar sistema para que asigne automáticamente clientes en rango $3,000-$15,000 
-                    a agentes con experiencia > 6 meses. Para agentes nuevos, asignar deudas < $3,000 para práctica. 
+                    <strong>Acción:</strong> Configurar sistema para que asigne automáticamente clientes en rango ₡3,000-₡15,000 
+                    a agentes con experiencia > 6 meses. Para agentes nuevos, asignar deudas < ₡3,000 para práctica. 
                     <strong>Impacto:</strong> Aumentar tasa de recuperación general del 34% al 52%, incrementando recaudación 
-                    diaria en $28,000 (15.6% más), equivalente a $840,000 mensuales adicionales.
+                    diaria en ₡28,000 (15.6% más), equivalente a ₡840,000 mensuales adicionales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -497,9 +497,9 @@ function generateRecaudacionAnalysis() {
                     <strong>Situación:</strong> Los top performers ofrecen planes de 3-6 cuotas y logran aceptación del 78%, 
                     mientras que agentes promedio ofrecen pago único y solo logran 23% de aceptación. 
                     <strong>Acción:</strong> Sesión de capacitación de 3 horas enseñando cómo estructurar planes de pago: 
-                    "¿Puede pagar $500 hoy y $500 los próximos 3 meses?" vs "¿Puede pagar $2,000 hoy?". 
+                    "¿Puede pagar ₡500 hoy y ₡500 los próximos 3 meses?" vs "¿Puede pagar ₡2,000 hoy?". 
                     <strong>Impacto:</strong> Aumentar tasa de aceptación de planes del 23% al 65%, incrementando recaudación 
-                    en $45,000 diarios ($1.35M mensuales adicionales).
+                    en ₡45,000 diarios (₡1.35M mensuales adicionales).
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -509,7 +509,7 @@ function generateRecaudacionAnalysis() {
                     (tasa de contacto 67%), mientras que empleados (segmento C) responden entre 6-8pm (tasa 58%). 
                     Actualmente se llama sin considerar perfil. <strong>Acción:</strong> Sistema IA que sugiere mejor horario 
                     de llamada según perfil del cliente y muestra en pantalla del agente. <strong>Impacto:</strong> Aumentar 
-                    tasa de contacto del 42% al 58%, incrementando oportunidades de cobro en $32,000 diarios ($960,000 mensuales).
+                    tasa de contacto del 42% al 58%, incrementando oportunidades de cobro en ₡32,000 diarios (₡960,000 mensuales).
                 </p>
             </div>
         </div>
@@ -521,13 +521,13 @@ function generateRecaudacionAnalysis() {
             </div>
             <div class="ai-action-card">
                 <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
-                    HOY - Reasignar Top 5 Agentes a Segmento de Deuda $3,000-$15,000
+                    HOY - Reasignar Top 5 Agentes a Segmento de Deuda ₡3,000-₡15,000
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Quiénes:</strong> María González, Carlos Ramírez, Ana Martínez, Luis Pérez, Carmen Díaz. 
-                    <strong>Qué:</strong> Cambiar su cola de trabajo para que solo reciban clientes con deuda $3,000-$15,000. 
+                    <strong>Qué:</strong> Cambiar su cola de trabajo para que solo reciban clientes con deuda ₡3,000-₡15,000. 
                     <strong>Por qué:</strong> Tienen tasa de recuperación 2x superior en este segmento. 
-                    <strong>ROI esperado:</strong> $15,000 diarios adicionales ($450,000 mensuales).
+                    <strong>ROI esperado:</strong> ₡15,000 diarios adicionales (₡450,000 mensuales).
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar hoy</span>
             </div>
@@ -539,7 +539,7 @@ function generateRecaudacionAnalysis() {
                     <strong>Qué:</strong> Sesión de 3 horas para 19 agentes restantes, enseñada por María González (top performer). 
                     <strong>Contenido:</strong> Cómo estructurar planes, qué montos sugerir, cómo manejar objeciones. 
                     <strong>Meta:</strong> Aumentar aceptación de planes del 23% al 55% en 14 días. 
-                    <strong>ROI:</strong> $1.35M mensuales adicionales.
+                    <strong>ROI:</strong> ₡1.35M mensuales adicionales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -607,7 +607,7 @@ function generateAnomaliasAnalysis() {
                     Esto resultó en cola de 15+ minutos y abandono del 42%. <strong>Acción:</strong> Antes de enviar campaña masiva, 
                     verificar capacidad disponible. Si se envía email a 5,000 clientes, asegurar que hay 12+ agentes disponibles 
                     en las siguientes 2 horas. Alternativamente, escalonar envío: 1,000 emails cada 30 min. 
-                    <strong>Impacto:</strong> Reducir abandono de picos del 42% al 18%, recuperando $23,000 que se perdieron 
+                    <strong>Impacto:</strong> Reducir abandono de picos del 42% al 18%, recuperando ₡23,000 que se perdieron 
                     por abandono en ese pico.
                 </p>
             </div>
@@ -617,7 +617,7 @@ function generateAnomaliasAnalysis() {
                     <strong>Situación:</strong> El jueves la tasa de recuperación cayó al 23% porque los 3 agentes top (que 
                     representan el 42% de la recuperación) estaban en capacitación. <strong>Acción:</strong> Programar capacitaciones 
                     en días de baja demanda (lunes temprano, viernes tarde) o escalonar: capacitar 2 agentes por vez, no 3. 
-                    <strong>Impacto:</strong> Evitar pérdida de $34,000 en recuperación que ocurrió el jueves por ausencia de top performers.
+                    <strong>Impacto:</strong> Evitar pérdida de ₡34,000 en recuperación que ocurrió el jueves por ausencia de top performers.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -628,7 +628,7 @@ function generateAnomaliasAnalysis() {
                     <strong>Acción:</strong> Auditoría inmediata: revisar grabaciones de esas 12 llamadas, verificar que los pagos 
                     se procesaron correctamente, y validar que los clientes existen. Si es legítimo, replicar su técnica. 
                     Si es fraude, suspender inmediatamente. <strong>Impacto:</strong> Proteger integridad operativa y evitar 
-                    pérdidas por fraude potencial de $15,000+.
+                    pérdidas por fraude potencial de ₡15,000+.
                 </p>
             </div>
         </div>
@@ -645,7 +645,7 @@ function generateAnomaliasAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Revisar grabaciones y transacciones de las 12 llamadas procesadas en 1 hora. 
                     Validar autenticidad. <strong>Por qué:</strong> Puede ser excelente técnica a replicar o posible fraude. 
-                    <strong>Riesgo:</strong> Si es fraude, puede costar $15,000+ a la empresa.
+                    <strong>Riesgo:</strong> Si es fraude, puede costar ₡15,000+ a la empresa.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar HOY</span>
             </div>
@@ -655,8 +655,8 @@ function generateAnomaliasAnalysis() {
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Crear proceso donde marketing/operaciones coordinen antes de enviar emails masivos. 
-                    Verificar capacidad disponible y escalonar envío si es necesario. <strong>Impacto:</strong> Evitar pérdidas 
-                    de $23,000 por abandono en picos.
+                    Verificar capacidad disponible y escalonar envío si es necesario.                     <strong>Impacto:</strong> Evitar pérdidas 
+                    de ₡23,000 por abandono en picos.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -696,7 +696,7 @@ function generateCuellosBotellaAnalysis() {
                     para que supervisor apruebe plan > $2,000, y el 67% de esos clientes abandona mientras espera.
                 </p>
                 <p style="margin: 0.75rem 0 0 0; color: #64748b; font-size: 0.875rem;">
-                    <strong>Impacto operativo:</strong> Estos cuellos de botella resultan en: (1) <strong>$45,000 mensuales perdidos</strong> 
+                    <strong>Impacto operativo:</strong> Estos cuellos de botella resultan en:                     (1) <strong>₡45,000 mensuales perdidos</strong> 
                     porque clientes abandonan mientras esperan autorización, (2) <strong>18% menos llamadas atendidas</strong> por día 
                     debido a tiempo perdido en consultas, (3) <strong>Frustración de agentes</strong> porque pasan más tiempo en procesos 
                     que en hablar con clientes. Si se eliminan estos cuellos, la capacidad operativa aumentaría 23% sin contratar más agentes.
@@ -713,12 +713,12 @@ function generateCuellosBotellaAnalysis() {
                 <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #92400e;">1. Automatizar Procesamiento de Pagos con Integración Directa</p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> Los agentes procesan pagos manualmente en 3 pasos (ingresar datos, validar, confirmar) 
-                    y tardan 4.2 min. Para montos > $1,000 necesitan aprobación de supervisor que tarda 8-12 min. 
+                    y tardan 4.2 min. Para montos > ₡1,000 necesitan aprobación de supervisor que tarda 8-12 min. 
                     <strong>Acción:</strong> Integrar sistema de pagos directamente con CRM para que el agente solo ingrese monto y 
-                    método, y el sistema procese automáticamente. Para montos $1,000-$5,000, dar autorización automática a agentes 
+                    método, y el sistema procese automáticamente. Para montos ₡1,000-₡5,000, dar autorización automática a agentes 
                     con experiencia > 6 meses. <strong>Impacto:</strong> Reducir tiempo de procesamiento de 4.2 min a 0.8 min, 
                     liberando <strong>14 minutos por hora</strong> por agente para más llamadas. Esto aumenta capacidad en 23% 
-                    y recuperación en $78,000 mensuales.
+                    y recuperación en ₡78,000 mensuales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -728,7 +728,7 @@ function generateCuellosBotellaAnalysis() {
                     tardando 2.1 min en encontrar información. <strong>Acción:</strong> Crear dashboard único que muestre: deuda actual, 
                     últimos 3 pagos, capacidad de pago estimada (IA), y 3 planes de pago pre-calculados. Todo en una pantalla. 
                     <strong>Impacto:</strong> Reducir tiempo de consulta de 2.1 min a 0.3 min, liberando <strong>9 minutos por hora</strong> 
-                    y aumentando recuperación en $45,000 mensuales.
+                    y aumentando recuperación en ₡45,000 mensuales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -736,9 +736,9 @@ function generateCuellosBotellaAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> El 34% de llamadas requiere esperar 8-12 min para aprobación de supervisor, 
                     y el 67% de esos clientes abandona. <strong>Acción:</strong> Sistema IA que aprueba automáticamente planes 
-                    hasta $5,000 si el cliente tiene: (a) Score de pago > 60%, (b) Al menos 1 pago previo en últimos 12 meses, 
-                    (c) Deuda < $15,000. Solo escalar a supervisor si no cumple estos criterios. <strong>Impacto:</strong> 
-                    Eliminar espera del 67% de casos, reduciendo abandono y recuperando $45,000 mensuales que se pierden 
+                    hasta ₡5,000 si el cliente tiene: (a) Score de pago > 60%, (b) Al menos 1 pago previo en últimos 12 meses, 
+                    (c) Deuda < ₡15,000. Solo escalar a supervisor si no cumple estos criterios. <strong>Impacto:</strong> 
+                    Eliminar espera del 67% de casos, reduciendo abandono y recuperando ₡45,000 mensuales que se pierden 
                     por clientes que abandonan mientras esperan.
                 </p>
             </div>
@@ -755,8 +755,8 @@ function generateCuellosBotellaAnalysis() {
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Coordinar con IT y proveedor de pagos para integrar sistema directo. 
-                    <strong>Requisitos:</strong> Procesamiento automático, autorización hasta $5,000 para agentes experimentados. 
-                    <strong>ROI:</strong> $78,000 mensuales adicionales en recuperación.
+                    <strong>Requisitos:</strong> Procesamiento automático, autorización hasta ₡5,000 para agentes experimentados. 
+                    <strong>ROI:</strong> ₡78,000 mensuales adicionales en recuperación.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Próximos 15 días</span>
             </div>
@@ -765,8 +765,8 @@ function generateCuellosBotellaAnalysis() {
                     ESTA SEMANA - Implementar Autorización Automática por Score
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
-                    <strong>Qué:</strong> Configurar sistema para aprobar automáticamente planes hasta $5,000 basado en score de cliente. 
-                    <strong>Impacto:</strong> Eliminar espera del 67% de casos y recuperar $45,000 mensuales.
+                    <strong>Qué:</strong> Configurar sistema para aprobar automáticamente planes hasta ₡5,000 basado en score de cliente. 
+                    <strong>Impacto:</strong> Eliminar espera del 67% de casos y recuperar ₡45,000 mensuales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -826,8 +826,8 @@ function generateIntencionPagoAnalysis() {
                     <strong>Situación:</strong> El modelo IA detecta intención alta en tiempo real durante la llamada, pero los agentes 
                     no lo saben hasta después. <strong>Acción:</strong> Implementar alerta visual en pantalla del agente que aparezca cuando 
                     intención > 80%: "⚠️ ALTA INTENCIÓN DETECTADA - Ofrecer plan de pago ahora". El sistema también debe mostrar automáticamente 
-                    3 opciones de planes de pago pre-calculados. <strong>Impacto:</strong> Aumentar tasa de cierre de clientes con alta 
-                    intención del 34% al 72%, recuperando $156,000 mensuales adicionales que actualmente se pierden.
+                    3 opciones de planes de pago pre-calculados.                     <strong>Impacto:</strong> Aumentar tasa de cierre de clientes con alta 
+                    intención del 34% al 72%, recuperando ₡156,000 mensuales adicionales que actualmente se pierden.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -836,7 +836,7 @@ function generateIntencionPagoAnalysis() {
                     <strong>Situación:</strong> Los clientes con intención > 85% tienen probabilidad de pago del 89% si se manejan bien, 
                     pero solo 34% pagan con agentes promedio. <strong>Acción:</strong> Configurar sistema para que cuando IA detecte 
                     intención > 85% en llamada entrante, la rutee automáticamente a uno de los top 5 agentes (María, Carlos, Ana, Luis, Carmen). 
-                    <strong>Impacto:</strong> Aumentar tasa de cierre del 34% al 82% en este segmento crítico, recuperando $234,000 mensuales 
+                    <strong>Impacto:</strong> Aumentar tasa de cierre del 34% al 82% en este segmento crítico, recuperando ₡234,000 mensuales 
                     adicionales. Esto representa el 18% de la recaudación mensual total.
                 </p>
             </div>
@@ -846,8 +846,8 @@ function generateIntencionPagoAnalysis() {
                     <strong>Situación:</strong> Los agentes promedio piden "pensarlo" o "llamar mañana" cuando detectan interés, 
                     perdiendo el 67% de estos clientes. <strong>Acción:</strong> Cuando intención > 80%, el sistema debe mostrar 
                     script específico: "Veo que está interesado. Tengo 3 opciones de pago listas. ¿Cuál le funciona mejor: 
-                    $500 hoy y 3 cuotas de $500, o $300 hoy y 6 cuotas de $300?" <strong>Impacto:</strong> Reducir tasa de "llamar 
-                    después" del 67% al 18%, aumentando cierres inmediatos y recuperación en $89,000 mensuales.
+                    ₡500 hoy y 3 cuotas de ₡500, o ₡300 hoy y 6 cuotas de ₡300?" <strong>Impacto:</strong> Reducir tasa de "llamar 
+                    después" del 67% al 18%, aumentando cierres inmediatos y recuperación en ₡89,000 mensuales.
                 </p>
             </div>
         </div>
@@ -865,7 +865,7 @@ function generateIntencionPagoAnalysis() {
                     <strong>Qué:</strong> Coordinar con IT para integrar modelo IA con sistema de agentes y mostrar alerta visual 
                     cuando intención > 80%. <strong>Requisitos:</strong> Alerta debe aparecer en primeros 90 segundos de llamada, 
                     mostrar score de intención, y sugerir 3 planes de pago. <strong>Impacto:</strong> Aumentar cierre de alta intención 
-                    del 34% al 72%, recuperando $156,000 mensuales.
+                    del 34% al 72%, recuperando ₡156,000 mensuales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -877,7 +877,7 @@ function generateIntencionPagoAnalysis() {
                     <strong>Qué:</strong> Sesión de 1.5 horas para todos los agentes, enseñando cómo identificar señales de alta 
                     intención (tono colaborativo, preguntas sobre planes, disponibilidad de pago) y cerrar en primera llamada. 
                     <strong>Instructor:</strong> María González (top performer con 78% de cierre en alta intención). 
-                    <strong>ROI:</strong> $89,000 mensuales adicionales.
+                    <strong>ROI:</strong> ₡89,000 mensuales adicionales.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar hoy</span>
             </div>
@@ -919,7 +919,7 @@ function generateDriftDatosAnalysis() {
                 <p style="margin: 0.75rem 0 0 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Impacto operativo:</strong> El modelo está sobre-estimando intención de pago en 12%, lo que hace que los agentes 
                     prioricen clientes incorrectos. Esto resulta en: 
-                    (1) <strong>$45,000 mensuales menos en recuperación</strong> por asignar mal los recursos, 
+                    (1) <strong>₡45,000 mensuales menos en recuperación</strong> por asignar mal los recursos, 
                     (2) <strong>Agentes frustrados</strong> porque el modelo les dice "alta intención" pero el cliente no paga, 
                     (3) <strong>Pérdida de confianza</strong> en el sistema IA por parte del equipo operativo.
                 </p>
@@ -939,7 +939,7 @@ function generateDriftDatosAnalysis() {
                     <strong>Acción:</strong> Reentrenar modelo con datos de últimos 60 días (2,847 llamadas, 1,234 pagos procesados) 
                     para capturar nuevo patrón: preferencia por planes largos, horarios vespertinos, y menor intención general. 
                     <strong>Impacto:</strong> Aumentar precisión del modelo del 73% al 89%, mejorando asignación de recursos y 
-                    recuperando los $45,000 mensuales perdidos por drift.
+                    recuperando los ₡45,000 mensuales perdidos por drift.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -947,9 +947,9 @@ function generateDriftDatosAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> El reentrenamiento toma 5-7 días. Mientras tanto, el modelo sigue dando predicciones 
                     incorrectas. <strong>Acción:</strong> Ajustar manualmente: (1) Reducir umbral de "alta intención" de 80% a 72% 
-                    (compensando el -12% de drift), (2) Priorizar planes de 6-12 cuotas en lugar de 3-6, (3) Cambiar horario sugerido 
-                    a 6pm-8pm. <strong>Impacto:</strong> Mitigar pérdida de $45,000 mensuales durante la semana de reentrenamiento, 
-                    recuperando aproximadamente $10,000 semanales.
+                    (compensando el -12% de drift),                     (2) Priorizar planes de 6-12 cuotas en lugar de 3-6, (3) Cambiar horario sugerido 
+                    a 6pm-8pm. <strong>Impacto:</strong> Mitigar pérdida de ₡45,000 mensuales durante la semana de reentrenamiento, 
+                    recuperando aproximadamente ₡10,000 semanales.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -958,8 +958,8 @@ function generateDriftDatosAnalysis() {
                     <strong>Situación:</strong> El drift se detectó tarde (2.3% ya acumulado). Si se detecta antes, se puede ajustar 
                     proactivamente. <strong>Acción:</strong> Configurar sistema que monitoree drift semanalmente y alerte cuando > 1.5%. 
                     El sistema debe comparar distribución de: montos de deuda, horarios de contacto, tasas de pago, y preferencias 
-                    de planes. <strong>Impacto:</strong> Detectar drift temprano y ajustar antes de que impacte operación, evitando 
-                    pérdidas futuras de $45,000+ mensuales.
+                    de planes.                     <strong>Impacto:</strong> Detectar drift temprano y ajustar antes de que impacte operación, evitando 
+                    pérdidas futuras de ₡45,000+ mensuales.
                 </p>
             </div>
         </div>
@@ -976,7 +976,7 @@ function generateDriftDatosAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Coordinar con equipo de IA para ajustar: umbral de alta intención de 80% a 72%, 
                     priorizar planes 6-12 cuotas, cambiar horario sugerido a 6pm-8pm. <strong>Por qué:</strong> Mitigar impacto 
-                    inmediato mientras se reentrena. <strong>ROI:</strong> Recuperar $10,000 semanales durante reentrenamiento.
+                    inmediato mientras se reentrena. <strong>ROI:</strong> Recuperar ₡10,000 semanales durante reentrenamiento.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar hoy</span>
             </div>
@@ -987,8 +987,8 @@ function generateDriftDatosAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Coordinar con equipo de Data Science para reentrenar modelo con datos de últimos 60 días. 
                     <strong>Datos necesarios:</strong> 2,847 llamadas, 1,234 pagos, perfiles de clientes, resultados de planes. 
-                    <strong>Duración:</strong> 5-7 días. <strong>Impacto:</strong> Restaurar precisión del modelo y recuperar 
-                    $45,000 mensuales perdidos.
+                    <strong>Duración:</strong> 5-7 días.                     <strong>Impacto:</strong> Restaurar precisión del modelo y recuperar 
+                    ₡45,000 mensuales perdidos.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -1028,10 +1028,10 @@ function generateIncumplimientosAnalysis() {
                 </p>
                 <p style="margin: 0.75rem 0 0 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Riesgo legal:</strong> Si estos incumplimientos continúan, la empresa puede enfrentar: 
-                    (1) <strong>Multas de $50,000-$200,000</strong> por violación de normativa de protección al consumidor, 
+                    (1) <strong>Multas de ₡50,000-₡200,000</strong> por violación de normativa de protección al consumidor, 
                     (2) <strong>Demandas colectivas</strong> de clientes afectados, 
                     (3) <strong>Pérdida de licencia</strong> para operar en cobranza. 
-                    El costo de un solo caso de demanda puede ser $150,000+ en multas y honorarios legales.
+                    El costo de un solo caso de demanda puede ser ₡150,000+ en multas y honorarios legales.
                 </p>
             </div>
         </div>
@@ -1048,7 +1048,7 @@ function generateIncumplimientosAnalysis() {
                     1 lenguaje indebido, 1 acoso. Esto representa el 57% de todos los incumplimientos. <strong>Acción:</strong> Suspender 
                     inmediatamente de llamadas salientes y asignar a revisión de calidad y capacitación legal obligatoria de 8 horas. 
                     Solo reactivar después de aprobar examen de cumplimiento. <strong>Impacto:</strong> Reducir incumplimientos del 57% 
-                    inmediatamente y evitar riesgo de multas de $50,000-$200,000.
+                    inmediatamente y evitar riesgo de multas de ₡50,000-₡200,000.
                 </p>
             </div>
             <div class="ai-recommendation-card">
@@ -1058,17 +1058,17 @@ function generateIncumplimientosAnalysis() {
                     después de las 21:00, ignorando la política. <strong>Acción:</strong> Configurar sistema ACD para que bloquee 
                     automáticamente cualquier intento de llamada saliente después de las 21:00 y antes de las 8:00. El sistema debe 
                     mostrar mensaje: "Horario no permitido. Llamada bloqueada por normativa legal." <strong>Impacto:</strong> Eliminar 
-                    completamente riesgo de llamadas fuera de horario y evitar multas de $25,000 por cada violación.
+                    completamente riesgo de llamadas fuera de horario y evitar multas de ₡25,000 por cada violación.
                 </p>
             </div>
             <div class="ai-recommendation-card">
                 <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #92400e;">3. Alerta en Tiempo Real para Lenguaje Prohibido</p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Situación:</strong> Los 2 casos de lenguaje indebido incluyeron frases como "le vamos a embargar" y 
-                    "tiene que pagar ya o habrá consecuencias", que están prohibidas. <strong>Acción:</strong> Implementar sistema 
+                    "tiene que pagar ya o habrá consecuencias", que están                     prohibidas. <strong>Acción:</strong> Implementar sistema 
                     de detección en tiempo real que analice transcripción de llamada y alerte al supervisor cuando detecte palabras 
                     prohibidas. El supervisor puede intervenir inmediatamente. <strong>Impacto:</strong> Detectar y prevenir lenguaje 
-                    indebido antes de que el cliente presente queja, evitando multas de $50,000+ y demandas.
+                    indebido antes de que el cliente presente queja, evitando multas de ₡50,000+ y demandas.
                 </p>
             </div>
         </div>
@@ -1084,8 +1084,8 @@ function generateIncumplimientosAnalysis() {
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Suspender inmediatamente de llamadas salientes, revisar sus últimas 50 llamadas para detectar 
-                    más incumplimientos, y asignar a capacitación legal obligatoria. <strong>Por qué:</strong> Tiene 57% de todos los 
-                    incumplimientos. <strong>Riesgo:</strong> Si continúa, puede generar demanda que cueste $150,000+ a la empresa.
+                    más incumplimientos, y asignar a capacitación legal obligatoria.                     <strong>Por qué:</strong> Tiene 57% de todos los 
+                    incumplimientos. <strong>Riesgo:</strong> Si continúa, puede generar demanda que cueste ₡150,000+ a la empresa.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Ejecutar HOY</span>
             </div>
@@ -1096,7 +1096,7 @@ function generateIncumplimientosAnalysis() {
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Coordinar con IT para configurar bloqueo automático en ACD de llamadas fuera de 8:00-21:00. 
                     <strong>Requisitos:</strong> Bloqueo debe ser a nivel de sistema, no solo advertencia. <strong>Impacto:</strong> 
-                    Eliminar riesgo de multas de $25,000 por cada llamada fuera de horario.
+                    Eliminar riesgo de multas de ₡25,000 por cada llamada fuera de horario.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Esta semana</span>
             </div>
@@ -1106,15 +1106,15 @@ function generateIncumplimientosAnalysis() {
                 </p>
                 <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
                     <strong>Qué:</strong> Sesión de 4 horas para todos los 24 agentes sobre: lenguaje permitido vs prohibido, 
-                    horarios legales, límites de llamadas, y consecuencias legales. <strong>Incluir:</strong> Casos reales de multas 
-                    y demandas. <strong>Impacto:</strong> Reducir incumplimientos del 100% y evitar riesgo de $200,000+ en multas.
+                    horarios legales, límites de llamadas, y consecuencias legales.                     <strong>Incluir:</strong> Casos reales de multas 
+                    y demandas. <strong>Impacto:</strong> Reducir incumplimientos del 100% y evitar riesgo de ₡200,000+ en multas.
                 </p>
                 <span class="action-priority priority-high">Alta Prioridad - Próximos 7 días</span>
             </div>
         </div>
         
         <div style="margin-top: 2rem; padding: 1rem; background: #fee2e2; border-radius: 8px; font-size: 0.875rem; color: #991b1b; border-left: 4px solid #dc2626;">
-            <strong>⚠️ RIESGO LEGAL CRÍTICO:</strong> Si estos incumplimientos continúan, la empresa puede enfrentar multas de $50,000-$200,000 
+            <strong>⚠️ RIESGO LEGAL CRÍTICO:</strong> Si estos incumplimientos continúan, la empresa puede enfrentar multas de ₡50,000-₡200,000 
             y pérdida de licencia. Acción inmediata requerida. | <strong>Última actualización:</strong> ${new Date().toLocaleString('es-ES')}
         </div>
     `;

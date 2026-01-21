@@ -1153,6 +1153,131 @@
                 font-size: 0.65rem;
             }
         }
+        
+        /* Mejoras adicionales de responsive para evitar roturas */
+        @media (max-width: 768px) {
+            .detail-modal-content,
+            .ai-modal-content {
+                max-width: 95%;
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+            
+            .detail-modal-header,
+            .ai-modal-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .detail-modal-title,
+            .ai-modal-title {
+                font-size: 1.25rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid.grid-cols-1.lg\\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-modal,
+            .ai-modal {
+                padding: 0.5rem;
+            }
+            
+            .detail-modal-content,
+            .ai-modal-content {
+                padding: 1rem;
+                border-radius: 8px;
+            }
+            
+            .ai-section-title {
+                font-size: 1rem;
+            }
+            
+            .ai-analysis-card,
+            .ai-recommendation-card,
+            .ai-action-card {
+                padding: 1rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Asegurar que los modales no se salgan de la pantalla */
+        @media (max-width: 1024px) {
+            .detail-modal-content,
+            .ai-modal-content {
+                max-width: calc(100vw - 2rem);
+            }
+        }
+        
+        /* Mejorar scroll en móviles */
+        @media (max-width: 768px) {
+            .detail-modal,
+            .ai-modal {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .detail-table {
+                font-size: 0.7rem;
+            }
+            
+            .detail-table th,
+            .detail-table td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+        
+        /* Ajustar iconos de IA en móviles */
+        @media (max-width: 480px) {
+            .ai-insight-icon {
+                width: 24px;
+                height: 24px;
+                top: 0.5rem;
+                right: 0.5rem;
+                font-size: 0.7rem;
+            }
+        }
+        
+        /* Mejorar espaciado en métricas en móviles */
+        @media (max-width: 480px) {
+            .metric-card {
+                margin-bottom: 0.75rem;
+            }
+            
+            .chart-container {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Asegurar que las tablas sean scrollables en móviles */
+        @media (max-width: 768px) {
+            .overflow-x-auto {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+            
+            .detail-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
     </style>
     <!-- Script de navegación inline para disponibilidad inmediata -->
     <script>

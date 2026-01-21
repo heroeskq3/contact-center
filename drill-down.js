@@ -676,7 +676,7 @@ function generateRecaudacionDetail() {
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                 <div class="metric-card">
                     <div class="metric-label">Recaudación Total</div>
-                    <div class="metric-value">$${data.total.toLocaleString('es-ES', {minimumFractionDigits: 2})}</div>
+                    <div class="metric-value">₡${data.total.toLocaleString('es-ES', {minimumFractionDigits: 2})}</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Pagos Completos</div>
@@ -688,7 +688,7 @@ function generateRecaudacionDetail() {
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Promedio por Pago</div>
-                    <div class="metric-value">$${data.promedio.toFixed(2)}</div>
+                    <div class="metric-value">₡${data.promedio.toFixed(2)}</div>
                 </div>
             </div>
             
@@ -714,8 +714,8 @@ function generateRecaudacionDetail() {
                                 <tr>
                                     <td class="font-semibold">${agente.nombre}</td>
                                     <td style="font-family: 'JetBrains Mono', monospace;">${agente.pagos}</td>
-                                    <td style="font-family: 'JetBrains Mono', monospace;">$${agente.monto.toLocaleString('es-ES', {minimumFractionDigits: 2})}</td>
-                                    <td style="font-family: 'JetBrains Mono', monospace;">$${agente.promedio.toFixed(2)}</td>
+                                    <td style="font-family: 'JetBrains Mono', monospace;">₡${agente.monto.toLocaleString('es-ES', {minimumFractionDigits: 2})}</td>
+                                    <td style="font-family: 'JetBrains Mono', monospace;">₡${agente.promedio.toFixed(2)}</td>
                                     <td>${agente.metodo}</td>
                                     <td>
                                         <span class="badge ${agente.performance >= 90 ? 'badge-success' : agente.performance >= 75 ? 'badge-warning' : 'badge-danger'}">
